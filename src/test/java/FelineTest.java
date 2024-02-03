@@ -32,5 +32,10 @@ public class FelineTest {
         int result = feline.getKittens();
         assertEquals(1, result);
     }
+    @Test(expected = Exception.class)
+    public void testUnknownAnimalKind() throws Exception {
+        Feline feline = new Feline();
+        feline.getFood("НеизвестныйВид");
+    }
 
 }
