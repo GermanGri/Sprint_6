@@ -30,6 +30,12 @@ public class ParametrizedFelineTest {
         List<String> result = feline.getFood(animalKind);
         assertEquals(expectedFood, result);
     }
+    @Test(expected = Exception.class)
+    public void testUnknownAnimalKind() throws Exception {
+        Feline feline = new Feline();
+        feline.getFood("НеизвестныйВид");
+    }
+
 
 }
 
